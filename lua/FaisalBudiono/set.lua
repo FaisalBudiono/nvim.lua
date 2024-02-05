@@ -1,3 +1,5 @@
+vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
