@@ -27,6 +27,8 @@ return require('packer').startup(function(use)
         }
     }
 
+    use 'nvim-lualine/lualine.nvim' -- Status Line
+
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('theprimeagen/harpoon')
 
