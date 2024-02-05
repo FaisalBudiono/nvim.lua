@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
         as = "catppuccin",
         requires = {
             'hrsh7th/nvim-cmp',
-            'lewis6991/gitsigns.nvim',
             'nvim-tree/nvim-tree.lua',
             'nvim-treesitter/nvim-treesitter',
             'echasnovski/mini.nvim',
