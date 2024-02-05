@@ -13,12 +13,18 @@ return require('packer').startup(function(use)
         requires = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' }
     }
 
+    -- Theme
     use {
-        "navarasu/onedark.nvim",
-        as = "onedark",
-        config = function ()
-            vim.cmd('colorscheme onedark')
-        end
+        "catppuccin/nvim",
+        as = "catppuccin",
+        requires = {
+            'hrsh7th/nvim-cmp',
+            'lewis6991/gitsigns.nvim',
+            'nvim-tree/nvim-tree.lua',
+            'nvim-treesitter/nvim-treesitter',
+            'echasnovski/mini.nvim',
+            'SmiteshP/nvim-navic',
+        }
     }
 
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -26,6 +32,7 @@ return require('packer').startup(function(use)
 
     use('tpope/vim-surround')
     use('tpope/vim-fugitive')
+    use('tpope/vim-repeat')
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -45,5 +52,4 @@ return require('packer').startup(function(use)
     }
 
     use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
-
 end)
