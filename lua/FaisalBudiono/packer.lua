@@ -53,4 +53,10 @@ return require('packer').startup(function(use)
     }
 
     use 'lewis6991/gitsigns.nvim' -- OPTIONAL: for git status
+
+    -- Completion
+    use {
+        'neoclide/coc.nvim',
+        run = ':call coc#util#install()'
+    }
 end)
