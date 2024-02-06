@@ -11,3 +11,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Open healthcheck for more info (:checkhealth)
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 
+vim.keymap.set("n", "<leader>nn", function () vim.cmd(':tabnew') end)
+vim.keymap.set("n", "<leader>nl", function () vim.cmd(':vnew') end)
+vim.keymap.set("n", "<leader>nj", function () vim.cmd(':new') end)
+
