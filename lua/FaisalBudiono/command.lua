@@ -13,3 +13,7 @@ local function cggvv()
 end
 vim.api.nvim_create_user_command('Cggvv', cggvv, { nargs='?' })
 
+local function ccfp()
+    vim.cmd('let @+ = expand("%:~:.")')
+end
+vim.api.nvim_create_user_command('Ccfp', ccfp, { nargs='?' })
