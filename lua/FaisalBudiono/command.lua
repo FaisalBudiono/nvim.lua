@@ -1,4 +1,5 @@
-local function ccfp()
+local function copyfilePath()
     vim.cmd('let @+ = expand("%:~:.")')
 end
-vim.api.nvim_create_user_command('Ccfp', ccfp, { nargs='?' })
+vim.api.nvim_create_user_command('Ccopyfilepath', copyfilePath, { nargs='?' })
+
