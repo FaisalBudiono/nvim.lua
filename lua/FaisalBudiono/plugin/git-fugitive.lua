@@ -10,6 +10,7 @@ return {
                 vim.cmd("wincmd k")
                 vim.cmd("q")
             end,
+            desc = "Open Git fugitive",
         },
     },
 }
