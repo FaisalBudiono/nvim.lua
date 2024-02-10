@@ -22,7 +22,6 @@ return {
                     lualine_x = {'encoding', 'fileformat', 'filetype'},
 
                     lualine_y = {
-                        'progress',
                         -- LSP Bar
                         {
                             function()
