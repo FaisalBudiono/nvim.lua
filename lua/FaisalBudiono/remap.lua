@@ -17,3 +17,9 @@ vim.keymap.set("n", "<leader>nn", function () vim.cmd(':tabnew') end)
 vim.keymap.set("n", "<leader>nl", function () vim.cmd(':vnew') end)
 vim.keymap.set("n", "<leader>nj", function () vim.cmd(':new') end)
 
+--
+-- Windows Size Manipulation
+--
+vim.keymap.set("n", "<leader>w=", "<c-w>=")
+vim.keymap.set("n", "<leader>w<s-m>", "100<c-w>+")
+vim.keymap.set("n", "<leader>wm", "100<c-w>-")
