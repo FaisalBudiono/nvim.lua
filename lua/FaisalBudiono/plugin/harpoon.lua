@@ -16,5 +16,6 @@ return {
         { "<A-4>", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>"},
         { "<A-n>", "<cmd>lua require('harpoon.ui').nav_next()<cr>"},
         { "<A-p>", "<cmd>lua require('harpoon.ui').nav_prev()<cr>"},
+        { "<A-t>", "<cmd>lua require('harpoon.term').gotoTerminal(1)<cr>" },
     },
 }
