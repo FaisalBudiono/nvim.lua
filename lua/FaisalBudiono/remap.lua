@@ -29,3 +29,6 @@ vim.keymap.set("n", "<leader>wm", "100<c-w>-")
 --
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
