@@ -12,5 +12,6 @@ return {
         { "<leader>pf", "<cmd>lua require('telescope.builtin').find_files()<cr>"},
         { "<leader><Bslash>", "<cmd>lua require('telescope.builtin').keymaps()<cr>"},
         { "<leader>ghb", "<cmd>lua require('telescope.builtin').git_bcommits()<cr>"},
+        { "<leader>ghh", "<cmd>lua require('telescope.builtin').git_commits()<cr>"},
     },
 }
