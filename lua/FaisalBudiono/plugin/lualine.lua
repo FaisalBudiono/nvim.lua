@@ -25,19 +25,26 @@ return {
                         -- LSP Bar
                         {
                             function()
-                                local msg = 'No Active LSP'
+                                local defaultMessage = 'No Active LSP'
                                 local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
                                 local clients = vim.lsp.get_active_clients()
                                 if next(clients) == nil then
-                                    return msg
+                                    return defaultMessage
                                 end
+
+                                local msg = ""
                                 for _, client in ipairs(clients) do
                                     local filetypes = client.config.filetypes
                                     if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-                                        return client.name
+                                        msg = msg .. " - " .. client.name
                                     end
                                 end
-                                return msg
+
+                                if #msg == 0 then
+                                    return defaultMessage
+                                end
+
+                                return string.sub(msg, 4, #msg)
                             end,
                             icon = ' ',
                             color = { fg = '#ffffff', gui = 'bold' },
