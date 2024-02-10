@@ -4,6 +4,11 @@ return {
         "williamboman/mason.nvim",
         "neovim/nvim-lspconfig",
     },
+    ft = {
+        "php",
+        "lua",
+        "typescript", "typescriptreact", "javascript",
+    },
     config = function ()
         require("mason").setup()
         require("mason-lspconfig").setup()
