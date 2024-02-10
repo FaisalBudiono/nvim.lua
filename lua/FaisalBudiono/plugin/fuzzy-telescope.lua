@@ -1,5 +1,5 @@
 return {
-    "nvim-telescope/telescope.nvim", 
+    "nvim-telescope/telescope.nvim",
     lazy = true,
     branch = "0.1.x",
     dependencies = {
@@ -11,5 +11,6 @@ return {
         { "<leader>ps", "<cmd>lua require('telescope.builtin').live_grep()<cr>"},
         { "<leader>pf", "<cmd>lua require('telescope.builtin').find_files()<cr>"},
         { "<leader><Bslash>", "<cmd>lua require('telescope.builtin').keymaps()<cr>"},
+        { "<leader>ghb", "<cmd>lua require('telescope.builtin').git_bcommits()<cr>"},
     },
 }
