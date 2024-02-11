@@ -1,7 +1,7 @@
 return {
     "lewis6991/gitsigns.nvim",
     lazy = true,
-    config = function () 
+    config = function ()
         require("gitsigns").setup()
     end,
     keys = {
@@ -15,7 +15,7 @@ return {
         { "<leader>gd", "<cmd>lua require('gitsigns').diffthis()<cr>" },
         { '<leader>gb', "<cmd>lua require('gitsigns').blame_line()<cr>" },
         {
-            '<leader>gvb', 
+            '<leader>gvb',
             function() require("gitsigns").blame_line({full=true}) end,
         },
     },
