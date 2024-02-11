@@ -5,6 +5,10 @@ return {
     dependencies = {
         "nvim-lua/plenary.nvim",
         "BurntSushi/ripgrep",
+        {
+            'nvim-telescope/telescope-fzf-native.nvim',
+            build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+        },
     },
     keys = {
         { "<C-p>", "<cmd>lua require('telescope.builtin').git_files()<cr>"},
@@ -14,4 +18,7 @@ return {
         { "<leader>ghb", "<cmd>lua require('telescope.builtin').git_bcommits()<cr>"},
         { "<leader>ghh", "<cmd>lua require('telescope.builtin').git_commits()<cr>"},
     },
+    config = function()
+        require("telescope").load_extension("fzf")
+    end
 }
