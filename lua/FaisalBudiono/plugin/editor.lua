@@ -1,6 +1,10 @@
 return {
     {
-        "nathanaelkane/vim-indent-guides",
-        lazy = true,
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        opts = {},
+        config = function()
+            require("ibl").setup()
+        end
     },
 }
