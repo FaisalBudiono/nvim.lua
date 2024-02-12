@@ -17,6 +17,7 @@ return {
                 "typescript",
                 "json",
                 "markdown",
+                "markdown_inline",
             },
 
             -- Automatically install missing parsers when entering buffer
