@@ -9,6 +9,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- Copy to system: Need XClip
 -- Open healthcheck for more info (:checkhealth)
+vim.keymap.set({"n", "v"}, "<leader>`", [["_]])
 vim.keymap.set({"n", "v"}, "<leader>cy", [["+y]])
 vim.keymap.set("n", "<leader>cp", [["+p]])
 vim.keymap.set("n", "<leader>cP", [["+P]])
