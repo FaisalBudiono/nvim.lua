@@ -1,5 +1,8 @@
 vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
 
+-- Change file format to unix (lf)
+vim.opt.ff = "unix"
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
@@ -39,4 +42,3 @@ vim.opt.splitright = true
 
 -- To help autocomplete in command mode
 vim.opt.ignorecase = true
-
