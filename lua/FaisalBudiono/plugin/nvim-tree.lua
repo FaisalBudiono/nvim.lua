@@ -12,6 +12,22 @@ return {
         vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
         vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
 
+        local function on_attach(bufnr)
+            local api = require "nvim-tree.api"
+            local keymap = vim.keymap -- for conciseness
+
+            local function opts(desc)
+                return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+            end
+
+            -- default mappings
+            api.config.mappings.default_on_attach(bufnr)
+
+            -- custom mappings
+            keymap.set('n', 'h', api.node.navigate.parent_close, opts('Close Directory'))
+            keymap.set('n', 'l', api.node.open.edit, opts('Open'))
+        end
+
         -- configure nvim-tree
         nvimtree.setup({
             view = {
@@ -45,6 +61,7 @@ return {
             git = {
                 ignore = true,
             },
+            on_attach = on_attach,
         })
 
         -- set keymaps
