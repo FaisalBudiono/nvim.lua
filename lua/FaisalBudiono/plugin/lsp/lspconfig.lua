@@ -8,6 +8,10 @@ return {
         "williamboman/mason.nvim",
     },
     config = function()
+        vim.diagnostic.config({
+            virtual_text = false,
+        })
+
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
         local mason_lspconfig = require("mason-lspconfig")
