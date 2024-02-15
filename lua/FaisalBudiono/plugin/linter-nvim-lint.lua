@@ -10,7 +10,6 @@ local config_fts = {
     yaml = { "eslint_d" },
     markdown = { "eslint_d" },
     graphql = { "eslint_d" },
-    php = { "phpcs" },
 }
 
 local fts = {}

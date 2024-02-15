@@ -2,6 +2,7 @@ return {
     "nvim-telescope/telescope.nvim",
     lazy = true,
     branch = "0.1.x",
+    event = { "LspAttach" },
     dependencies = {
         "nvim-lua/plenary.nvim",
         "BurntSushi/ripgrep",

@@ -28,18 +28,19 @@ return {
     config = function()
         local conform = require("conform")
 
-        local format_on_save =
-            {
-                lsp_fallback = true,
-                async = false,
-                timeout_ms = 500,
-            }, conform.setup({
-                formatters_by_ft = config_fts,
-                format_on_save = format_on_save,
-            })
+        local format_config = {
+            lsp_fallback = true,
+            async = false,
+            timeout_ms = 500,
+        }
+
+        conform.setup({
+            formatters_by_ft = config_fts,
+            format_on_save = format_config,
+        })
 
         vim.keymap.set({ "n", "v" }, "<leader>lf", function()
-            conform.format(format_on_save)
+            conform.format(format_config)
         end, { desc = "Format file or range (in visual mode)" })
     end,
 }
