@@ -1,11 +1,11 @@
 return {
-    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
     lazy = true,
     event = "VeryLazy",
     dependencies = {
-        "neovim/nvim-lspconfig",
-        "hrsh7th/cmp-nvim-lsp",
         "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
         vim.diagnostic.config({
@@ -74,56 +74,54 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
-        mason_lspconfig.setup({
-            handlers = {
-                function(server_name) -- default handler (optional)
-                    require("lspconfig")[server_name].setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                    })
-                end,
+        mason_lspconfig.setup_handlers({
+            function(server_name) -- default handler (optional)
+                require("lspconfig")[server_name].setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                })
+            end,
 
-                lua_ls = function()
-                    lspconfig["lua_ls"].setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                        settings = { -- custom settings for lua
-                            Lua = {
-                                -- make the language server recognize "vim" global
-                                diagnostics = {
-                                    globals = { "vim" },
-                                },
-                                workspace = {
-                                    -- make language server aware of runtime files
-                                    library = {
-                                        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                                        [vim.fn.stdpath("config") .. "/lua"] = true,
-                                    },
+            lua_ls = function()
+                lspconfig["lua_ls"].setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                    settings = { -- custom settings for lua
+                        Lua = {
+                            -- make the language server recognize "vim" global
+                            diagnostics = {
+                                globals = { "vim" },
+                            },
+                            workspace = {
+                                -- make language server aware of runtime files
+                                library = {
+                                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                                    [vim.fn.stdpath("config") .. "/lua"] = true,
                                 },
                             },
                         },
-                    })
-                end,
+                    },
+                })
+            end,
 
-                tailwindcss = function()
-                    lspconfig["tailwindcss"].setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                        filetypes = {
-                            "markdown",
-                            "css",
-                            "less",
-                            "sass",
-                            "scss",
-                            "javascript",
-                            "javascriptreact",
-                            "rescript",
-                            "typescript",
-                            "typescriptreact",
-                        },
-                    })
-                end,
-            },
+            tailwindcss = function()
+                lspconfig["tailwindcss"].setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                    filetypes = {
+                        "markdown",
+                        "css",
+                        "less",
+                        "sass",
+                        "scss",
+                        "javascript",
+                        "javascriptreact",
+                        "rescript",
+                        "typescript",
+                        "typescriptreact",
+                    },
+                })
+            end,
         })
     end,
 }

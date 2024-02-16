@@ -1,7 +1,8 @@
 return {
     "williamboman/mason.nvim",
+    lazy = true,
     cmd = { "Mason" },
-    event = { "LspAttach" },
+    event = { "VeryLazy" },
     dependencies = {
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -26,26 +27,23 @@ return {
             },
         })
 
-        mason_lspconfig.setup({
-            -- list of servers for mason to install
-            ensure_installed = {
-                "intelephense",
-                "tsserver",
-                "tailwindcss",
-                "lua_ls",
-            },
-            -- auto-install configured servers (with lspconfig)
-            automatic_installation = true, -- not the same as ensure_installed
-        })
+        mason_lspconfig.setup()
 
         mason_tool_installer.setup({
             ensure_installed = {
-                "php_cs_fixer", -- php formatter
-                "prettier", -- prettier formatter
-                "stylua", -- lua formatter
-                "eslint_d", -- js linter
-                "selene", -- lua linter
+                "json-lsp",
+                "intelephense",
+                "lua-language-server",
+                "typescript-language-server",
+                "tailwindcss-language-server",
+                "php-cs-fixer",
+                "prettier",
+                "stylua",
+                "eslint_d",
+                "selene",
             },
         })
+
+        vim.cmd("MasonToolsInstall")
     end,
 }
