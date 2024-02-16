@@ -18,43 +18,50 @@ return {
 
         local keymap = vim.keymap -- for conciseness
 
-        local opts = { noremap = true, silent = true }
         local on_attach = function(_, bufnr)
-            opts.buffer = bufnr
+            local function opts(desc)
+                return { noremap = true, silent = true, buffer = bufnr, desc = desc }
+            end
 
             -- set keybinds
-            opts.desc = "LSP go to definition"
-            keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-            opts.desc = "LSP go to definition with Telescope"
-            keymap.set("n", "gD", ":Telescope lsp_definitions<CR>", opts)
+            keymap.set("n", "gd", vim.lsp.buf.definition, opts("LSP go to definition"))
+            keymap.set(
+                "n",
+                "gD",
+                ":Telescope lsp_definitions<CR>",
+                opts("LSP go to definition with Telescope")
+            )
 
-            opts.desc = "Show LSP references"
-            keymap.set("n", "gr", vim.lsp.buf.references, opts)
-            opts.desc = "Show LSP references with Telescope"
-            keymap.set("n", "gR", ":Telescope lsp_references<CR>", opts)
+            keymap.set("n", "gr", vim.lsp.buf.references, opts("Show LSP references"))
+            keymap.set(
+                "n",
+                "gR",
+                ":Telescope lsp_references<CR>",
+                opts("Show LSP references with Telescope")
+            )
 
-            opts.desc = "Show line diagnostic"
-            keymap.set("n", "<leader>ldh", vim.diagnostic.open_float, opts)
+            keymap.set("n", "<leader>ldh", vim.diagnostic.open_float, opts("Show line diagnostic"))
 
-            opts.desc = "Show Trouble document diagnostic"
-            keymap.set("n", "<leader>ldd", ":Trouble document_diagnostics<CR>", opts)
-            opts.desc = "Show Trouble workspace diagnostic"
-            keymap.set("n", "<leader>ldw", ":Trouble workspace_diagnostics<CR>", opts)
+            keymap.set(
+                "n",
+                "<leader>ldd",
+                ":Trouble document_diagnostics<CR>",
+                opts("Show Trouble document diagnostic")
+            )
+            keymap.set(
+                "n",
+                "<leader>ldw",
+                ":Trouble workspace_diagnostics<CR>",
+                opts("Show Trouble workspace diagnostic")
+            )
+            keymap.set("n", "K", vim.lsp.buf.hover, opts("Show LSP hover doc"))
 
-            opts.desc = "Show LSP hover doc"
-            keymap.set("n", "K", vim.lsp.buf.hover, opts)
+            keymap.set("n", "<leader>lrn", vim.lsp.buf.rename, opts("Rename variable"))
 
-            opts.desc = "Rename variable"
-            keymap.set("n", "<leader>lrn", vim.lsp.buf.rename, opts)
+            keymap.set("n", "<leader>l.", vim.lsp.buf.code_action, opts("LSP code action"))
 
-            opts.desc = "LSP code action"
-            keymap.set("n", "<leader>l.", vim.lsp.buf.code_action, opts)
-
-            opts.desc = "Go to previous diagnostic"
-            keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
-
-            opts.desc = "Go to next diagnostic"
-            keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
+            keymap.set("n", "[d", vim.diagnostic.goto_prev, opts("Go to previous diagnostic"))
+            keymap.set("n", "]d", vim.diagnostic.goto_next, opts("Go to next diagnostic"))
         end
 
         -- used to enable autocompletion (assign to every lsp server config)
