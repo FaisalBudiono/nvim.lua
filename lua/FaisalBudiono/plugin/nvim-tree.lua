@@ -68,10 +68,11 @@ return {
                     },
                 },
             },
-            git = {
-                ignore = true,
-            },
             on_attach = on_attach,
+            filters = {
+                git_ignored = false,
+                dotfiles = false,
+            },
         })
 
         -- set keymaps
