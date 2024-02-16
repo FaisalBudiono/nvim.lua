@@ -12,18 +12,18 @@ return {
         },
     },
     keys = {
-        { "<C-p>", "<cmd>lua require('telescope.builtin').git_files()<cr>" },
+        { "<C-p>", ":lua require('telescope.builtin').git_files()<cr>" },
         {
             "<leader>ps",
             function()
                 require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })
             end,
         },
-        { "<leader>pS", "<cmd>lua require('telescope.builtin').live_grep()<cr>" },
-        { "<leader>pf", "<cmd>lua require('telescope.builtin').find_files({hidden=true})<cr>" },
-        { "<leader><Bslash>", "<cmd>lua require('telescope.builtin').keymaps()<cr>" },
-        { "<leader>ghb", "<cmd>lua require('telescope.builtin').git_bcommits()<cr>" },
-        { "<leader>ghh", "<cmd>lua require('telescope.builtin').git_commits()<cr>" },
+        { "<leader>pS", ":lua require('telescope.builtin').live_grep()<cr>" },
+        { "<leader>pf", ":lua require('telescope.builtin').find_files({hidden=true})<cr>" },
+        { "<leader><Bslash>", ":lua require('telescope.builtin').keymaps()<cr>" },
+        { "<leader>ghb", ":lua require('telescope.builtin').git_bcommits()<cr>" },
+        { "<leader>ghh", ":lua require('telescope.builtin').git_commits()<cr>" },
     },
     config = function()
         require("telescope").load_extension("fzf")

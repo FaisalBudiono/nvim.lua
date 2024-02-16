@@ -12,8 +12,8 @@ return {
             end,
             mode = { "v" },
         },
-        { "<leader>gd", "<cmd>lua require('gitsigns').diffthis()<cr>" },
-        { "<leader>gb", "<cmd>lua require('gitsigns').blame_line()<cr>" },
+        { "<leader>gd", ":lua require('gitsigns').diffthis()<cr>" },
+        { "<leader>gb", ":lua require('gitsigns').blame_line()<cr>" },
         {
             "<leader>gvb",
             function()
