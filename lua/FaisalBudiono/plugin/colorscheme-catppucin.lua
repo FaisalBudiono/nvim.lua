@@ -1,11 +1,11 @@
 return {
-    "catppuccin/nvim", 
-    name = "catppuccin", 
+    "catppuccin/nvim",
+    name = "catppuccin",
     priority = 1000,
     dependencies = {
         "nvim-lualine/lualine.nvim",
     },
-    config = function () 
+    config = function()
         require("catppuccin").setup({
             flavour = "mocha", -- latte, frappe, macchiato, mocha
             background = { -- :h background
@@ -46,6 +46,6 @@ return {
         })
 
         -- setup must be called before loading
-        vim.cmd.colorscheme "catppuccin-macchiato"
+        vim.cmd.colorscheme("catppuccin-macchiato")
     end,
 }

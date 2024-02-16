@@ -1,22 +1,24 @@
 return {
     "lewis6991/gitsigns.nvim",
     lazy = true,
-    config = function ()
+    config = function()
         require("gitsigns").setup()
     end,
     keys = {
         {
             "<leader>gsa",
             function()
-                require("gitsigns").stage_hunk({vim.fn.line("."), vim.fn.line("v")})
+                require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
             end,
-            mode = {"v"},
+            mode = { "v" },
         },
         { "<leader>gd", "<cmd>lua require('gitsigns').diffthis()<cr>" },
-        { '<leader>gb', "<cmd>lua require('gitsigns').blame_line()<cr>" },
+        { "<leader>gb", "<cmd>lua require('gitsigns').blame_line()<cr>" },
         {
-            '<leader>gvb',
-            function() require("gitsigns").blame_line({full=true}) end,
+            "<leader>gvb",
+            function()
+                require("gitsigns").blame_line({ full = true })
+            end,
         },
     },
 }

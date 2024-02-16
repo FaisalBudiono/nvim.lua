@@ -6,27 +6,27 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
         config = function()
-            require('lualine').setup({
+            require("lualine").setup({
                 options = {
-                    theme = "catppuccin"
+                    theme = "catppuccin",
                 },
                 sections = {
-                    lualine_a = {'mode'},
-                    lualine_b = {'branch', 'diff', 'diagnostics'},
+                    lualine_a = { "mode" },
+                    lualine_b = { "branch", "diff", "diagnostics" },
                     lualine_c = {
                         function()
                             local relativePath = vim.fn.expand("%:~:.")
                             return relativePath
                         end,
                     },
-                    lualine_x = {'encoding', 'fileformat', 'filetype'},
+                    lualine_x = { "encoding", "fileformat", "filetype" },
 
                     lualine_y = {
                         -- LSP Bar
                         {
                             function()
-                                local defaultMessage = 'No Active LSP'
-                                local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+                                local defaultMessage = "No Active LSP"
+                                local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
                                 local clients = vim.lsp.get_active_clients()
                                 if next(clients) == nil then
                                     return defaultMessage
@@ -46,17 +46,17 @@ return {
 
                                 return string.sub(msg, 4, #msg)
                             end,
-                            icon = ' ',
-                            color = { fg = '#ffffff', gui = 'bold' },
-                        }
+                            icon = " ",
+                            color = { fg = "#ffffff", gui = "bold" },
+                        },
                     },
 
-                    lualine_z = {'location'}
+                    lualine_z = { "location" },
                 },
             })
 
             -- Hide Mode in Bottom
             vim.opt.showmode = false
-        end
+        end,
     },
 }
