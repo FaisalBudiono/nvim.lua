@@ -29,6 +29,7 @@ return {
         mason_lspconfig.setup({
             -- list of servers for mason to install
             ensure_installed = {
+                "intelephense",
                 "tsserver",
                 "tailwindcss",
                 "lua_ls",
@@ -39,9 +40,11 @@ return {
 
         mason_tool_installer.setup({
             ensure_installed = {
+                "php_cs_fixer", -- php formatter
                 "prettier", -- prettier formatter
                 "stylua", -- lua formatter
                 "eslint_d", -- js linter
+                "selene", -- lua linter
             },
         })
     end,
