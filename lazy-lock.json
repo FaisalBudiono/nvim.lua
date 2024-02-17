@@ -24,7 +24,7 @@
   "nvim-lint": { "branch": "master", "commit": "31be66c27214174a28fc092ffcf4bb3e8f6cfd43" },
   "nvim-lspconfig": { "branch": "master", "commit": "d1bab4cf4b69e49d6058028fd933d8ef5e74e680" },
   "nvim-tree.lua": { "branch": "master", "commit": "863cf832ceb0b2377c913b7696dd7d64f4978941" },
-  "nvim-treesitter": { "branch": "master", "commit": "504fe1043298c468f56a6ef6dc61f35b2d69495a" },
+  "nvim-treesitter": { "branch": "master", "commit": "17d68ac13c902f55253b7facb47df4c0ae532575" },
   "nvim-web-devicons": { "branch": "master", "commit": "7f30f2da3c3641841ceb0e2c150281f624445e8f" },
   "plenary.nvim": { "branch": "master", "commit": "4f71c0c4a196ceb656c824a70792f3df3ce6bb6d" },
   "ripgrep": { "branch": "master", "commit": "e92e2ef8137a4333fee141f842e9a59b5da7b645" },
@@ -33,6 +33,6 @@
   "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
   "vim-fugitive": { "branch": "master", "commit": "011cf4fcb93a9649ffc6dcdff56ef948f5d0f7cc" },
   "vim-repeat": { "branch": "master", "commit": "24afe922e6a05891756ecf331f39a1f6743d3d5a" },
-  "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" }
+  "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-tmux-navigator": { "branch": "master", "commit": "38b1d0402c4600543281dc85b3f51884205674b6" }
 }
