@@ -45,13 +45,13 @@ return {
             keymap.set(
                 "n",
                 "<leader>ldd",
-                ":Trouble document_diagnostics<CR>",
+                ":TroubleToggle document_diagnostics<CR>",
                 opts("Show Trouble document diagnostic")
             )
             keymap.set(
                 "n",
                 "<leader>ldw",
-                ":Trouble workspace_diagnostics<CR>",
+                ":TroubleToggle workspace_diagnostics<CR>",
                 opts("Show Trouble workspace diagnostic")
             )
             keymap.set("n", "K", vim.lsp.buf.hover, opts("Show LSP hover doc"))
