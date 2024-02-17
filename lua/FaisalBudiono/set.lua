@@ -2,6 +2,7 @@ vim.cmd([[let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro']])
 
 -- Change file format to unix (lf)
 vim.opt.ff = "unix"
+vim.opt.termguicolors = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -24,8 +25,6 @@ vim.opt.backup = false
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
-vim.opt.termguicolors = true
-
 -- Line limit before scrolling
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
@@ -34,8 +33,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "72,80,100"
-
-vim.opt.termguicolors = true
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
