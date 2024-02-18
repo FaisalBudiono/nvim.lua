@@ -31,3 +31,4 @@ require("lazy").setup({
 })
 
 require("FaisalBudiono.command")
+require("FaisalBudiono.filetype")
