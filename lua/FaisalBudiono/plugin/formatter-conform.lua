@@ -11,7 +11,7 @@ local config_fts = {
     markdown = { "prettier" },
     graphql = { "prettier" },
     lua = { "stylua" },
-    php = { "php_cs_fixer" },
+    php = { "php-cs-fixer" },
 }
 
 local fts = {}
