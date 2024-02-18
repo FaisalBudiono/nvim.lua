@@ -1,3 +1,5 @@
+local opts = require("FaisalBudiono.util").create_opts
+
 return {
     "christoomey/vim-tmux-navigator",
     lazy = false,
@@ -6,13 +8,11 @@ return {
         "TmuxNavigateDown",
         "TmuxNavigateUp",
         "TmuxNavigateRight",
-        "TmuxNavigatePrevious",
     },
     keys = {
-        { "<c-h>", ":TmuxNavigateLeft<cr>" },
-        { "<c-j>", ":TmuxNavigateDown<cr>" },
-        { "<c-k>", ":TmuxNavigateUp<cr>" },
-        { "<c-l>", ":TmuxNavigateRight<cr>" },
-        { "<c-\\>", ":TmuxNavigatePrevious<cr>" },
+        { "<c-h>", ":TmuxNavigateLeft<cr>" , opts("TMUX left")},
+        { "<c-j>", ":TmuxNavigateDown<cr>" , opts("TMUX down")},
+        { "<c-k>", ":TmuxNavigateUp<cr>" , opts("TMUX up")},
+        { "<c-l>", ":TmuxNavigateRight<cr>" , opts("TMUX right")},
     },
 }

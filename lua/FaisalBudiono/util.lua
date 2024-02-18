@@ -1,5 +1,13 @@
 local M = {}
 
+M.create_opts = function(desc)
+    return {
+        desc = desc,
+        noremap = true,
+        silent = true,
+    }
+end
+
 M.get_visual = function()
     local s_start = vim.fn.getpos("v")
     local s_end = vim.fn.getpos(".")

@@ -6,6 +6,7 @@ return {
         { "<leader>ee", ":NvimTreeFindFileToggle<CR>" },
     },
     config = function()
+        local opts = require("FaisalBudiono.util").create_opts
         local nvimtree = require("nvim-tree")
 
         -- recommended settings from nvim-tree documentation
@@ -78,7 +79,7 @@ return {
         -- set keymaps
         local keymap = vim.keymap -- for conciseness
 
-        keymap.set("n", "<leader>ec", ":NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
-        keymap.set("n", "<leader>er", ":NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
+        keymap.set("n", "<leader>ec", ":NvimTreeCollapse<CR>", opts("Collapse file explorer"))
+        keymap.set("n", "<leader>er", ":NvimTreeRefresh<CR>", opts("Refresh file explorer"))
     end,
 }

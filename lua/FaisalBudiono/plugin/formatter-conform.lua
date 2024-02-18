@@ -26,6 +26,7 @@ return {
         "williamboman/mason.nvim",
     },
     config = function()
+        local opts = require("FaisalBudiono.util").create_opts
         local conform = require("conform")
 
         local format_config = {
@@ -40,6 +41,6 @@ return {
 
         vim.keymap.set({ "n", "v" }, "<leader>lf", function()
             conform.format(format_config)
-        end, { desc = "Format file or range (in visual mode)" })
+        end, opts("Format file or range (in visual mode)"))
     end,
 }
