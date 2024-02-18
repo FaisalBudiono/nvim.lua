@@ -41,6 +41,8 @@ return {
                 "stylua",
                 "eslint_d",
                 "selene",
+                "docker-compose-language-service",
+                "dockerfile-language-server",
             },
         })
 
