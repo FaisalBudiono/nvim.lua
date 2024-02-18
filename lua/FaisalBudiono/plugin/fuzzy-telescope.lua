@@ -20,7 +20,10 @@ return {
             end,
         },
         { "<leader>pS", ":lua require('telescope.builtin').live_grep()<cr>" },
-        { "<leader>pf", ":lua require('telescope.builtin').find_files({hidden=true})<cr>" },
+        {
+            "<leader>pf",
+            ":lua require('telescope.builtin').find_files({hidden=true,no_ignore=true})<cr>",
+        },
         { "<leader><Bslash>", ":lua require('telescope.builtin').keymaps()<cr>" },
         { "<leader>ghb", ":lua require('telescope.builtin').git_bcommits()<cr>" },
         { "<leader>ghh", ":lua require('telescope.builtin').git_commits()<cr>" },
