@@ -6,7 +6,6 @@ local config_fts = {
     svelte = { "eslint_d" },
     css = { "eslint_d" },
     html = { "eslint_d" },
-    json = { "eslint_d" },
     yaml = { "eslint_d" },
     markdown = { "eslint_d" },
     graphql = { "eslint_d" },
