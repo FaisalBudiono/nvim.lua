@@ -36,7 +36,6 @@ return {
 
         conform.setup({
             formatters_by_ft = config_fts,
-            format_on_save = format_config,
         })
 
         vim.keymap.set({ "n", "v" }, "<leader>lf", function()
