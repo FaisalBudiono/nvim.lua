@@ -18,6 +18,16 @@ return {
             function()
                 require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })
             end,
+            mode = { "n" },
+        },
+        {
+            "<leader>ps",
+            function()
+                require("telescope.builtin").grep_string({
+                    search = require("FaisalBudiono.util").get_visual()[1],
+                })
+            end,
+            mode = { "v" },
         },
         { "<leader>pS", ":lua require('telescope.builtin').live_grep()<cr>" },
         {
