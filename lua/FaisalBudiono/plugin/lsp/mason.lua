@@ -43,6 +43,8 @@ return {
                 "selene",
                 "docker-compose-language-service",
                 "dockerfile-language-server",
+                "bash-language-server",
+                "shfmt",
             },
         })
 

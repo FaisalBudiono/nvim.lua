@@ -12,6 +12,7 @@ local config_fts = {
     graphql = { "prettier" },
     lua = { "stylua" },
     php = { "php-cs-fixer" },
+    sh = { "shfmt" },
 }
 
 local fts = {}
