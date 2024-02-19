@@ -3,10 +3,14 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = true,
     keys = {
-        { "<leader>ee", ":NvimTreeFindFileToggle<CR>" },
+        {
+            "<leader>ee",
+            ":NvimTreeFindFileToggle<CR>",
+            noremap = true,
+            silent = true,
+        },
     },
     config = function()
-        local opts = require("FaisalBudiono.util").create_opts
         local nvimtree = require("nvim-tree")
 
         -- recommended settings from nvim-tree documentation
@@ -78,6 +82,7 @@ return {
 
         -- set keymaps
         local keymap = vim.keymap -- for conciseness
+        local opts = require("FaisalBudiono.util").create_opts
 
         keymap.set("n", "<leader>ec", ":NvimTreeCollapse<CR>", opts("Collapse file explorer"))
         keymap.set("n", "<leader>er", ":NvimTreeRefresh<CR>", opts("Refresh file explorer"))

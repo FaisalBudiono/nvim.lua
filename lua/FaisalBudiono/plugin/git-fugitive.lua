@@ -1,5 +1,3 @@
-local opts = require("FaisalBudiono.util").create_opts
-
 return {
     "tpope/vim-fugitive",
     lazy = true,
@@ -10,7 +8,9 @@ return {
                 vim.cmd("Git")
                 vim.cmd("wincmd L")
             end,
-            opts("Open Git fugitive"),
+            noremap = true,
+            silent = true,
+            desc = "Open Git fugitive",
         },
     },
 }
