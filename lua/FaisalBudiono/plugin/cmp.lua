@@ -52,7 +52,7 @@ return {
                 ["<C-u>"] = cmp.mapping.scroll_docs(2),
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<C-e>"] = cmp.mapping.abort(),
-                ["<Tab>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                ["<Tab>"] = cmp.mapping.confirm({ select = true }),
                 ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }),
             sources = cmp.config.sources({
