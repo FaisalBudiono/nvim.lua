@@ -74,7 +74,10 @@ return {
         })
         cmp.setup.filetype("lua", {
             sources = cmp.config.sources({
-                { name = "nvim_lua" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+                { name = "nvim_lsp" },
+                { name = "nvim_lua" },
+                { name = "luasnip" },
+                { name = "nvim_lsp_signature_help" },
             }, {
                 { name = "buffer" },
             }),
