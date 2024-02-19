@@ -42,3 +42,9 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts("Move down and auto indent"))
 
 -- Search Highlighter
 vim.keymap.set("n", "<leader>hl", ":noh<CR>", opts("no highlight"))
+
+-- Replace / to \
+vim.keymap.set("v", "<leader>pn", function()
+    vim.cmd("s/\\//\\\\/g")
+    vim.cmd("noh")
+end, opts("Replace slash to backslash"))
