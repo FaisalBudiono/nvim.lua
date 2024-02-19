@@ -13,27 +13,24 @@ return {
         "hrsh7th/cmp-nvim-lsp-signature-help",
 
         -- Luasnip
-        {
-            "L3MON4D3/LuaSnip",
-            version = "v2.*",
-            -- install jsregexp (optional!).
-            build = "make install_jsregexp",
-        },
+        "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
     },
     event = { "LspAttach" },
     config = function()
         local cmp = require("cmp")
+        local ls = require("luasnip")
+        local lspkind = require("lspkind")
 
         cmp.setup({
             snippet = {
                 -- REQUIRED - you must specify a snippet engine
                 expand = function(args)
-                    require("luasnip").lsp_expand(args.body)
+                    ls.lsp_expand(args.body)
                 end,
             },
             formatting = {
-                format = require("lspkind").cmp_format({
+                format = lspkind.cmp_format({
                     mode = "symbol", -- show only symbol annotations
                     maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
                     -- can also be a function to dynamically calculate max width such as
