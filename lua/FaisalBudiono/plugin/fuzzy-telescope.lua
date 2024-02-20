@@ -56,6 +56,13 @@ return {
             desc = "Open telescope fuzzy finder for all file",
         },
         {
+            "<leader>po",
+            ":lua require('telescope.builtin').lsp_document_symbols()<cr>",
+            noremap = true,
+            silent = true,
+            desc = "Open telescope symbol",
+        },
+        {
             "<leader><Bslash>",
             ":lua require('telescope.builtin').keymaps()<cr>",
             noremap = true,
@@ -78,6 +85,18 @@ return {
         },
     },
     config = function()
-        require("telescope").load_extension("fzf")
+        local tele = require("telescope")
+
+        tele.setup({
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<C-o>"] = 'complete_tag', -- add filtering in telescope symbol
+                    },
+                },
+            },
+        })
+
+        tele.load_extension("fzf")
     end,
 }
