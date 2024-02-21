@@ -9,6 +9,7 @@ return (new Config())
         'array_syntax' => [
             'syntax' => 'short',
         ],
+        'braces_position' => true,
         'compact_nullable_type_declaration' => true,
         'declare_strict_types' => true,
         'indentation_type' => true,
@@ -25,6 +26,7 @@ return (new Config())
         'no_unused_imports' => true,
         'no_whitespace_before_comma_in_array' => true,
         'ordered_imports' => true,
+        'return_type_declaration' => true,
         'single_blank_line_at_eof' => true,
         'single_line_empty_body' => true,
         'single_quote' => true,
