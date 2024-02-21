@@ -13,12 +13,7 @@ return {
                 sections = {
                     lualine_a = { "mode" },
                     lualine_b = { "branch", "diff", "diagnostics" },
-                    lualine_c = {
-                        function()
-                            local relativePath = vim.fn.expand("%:~:.")
-                            return relativePath
-                        end,
-                    },
+                    lualine_c = { "filename" },
                     lualine_x = { "encoding", "fileformat", "filetype" },
 
                     lualine_y = {
