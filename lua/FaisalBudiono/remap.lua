@@ -1,4 +1,5 @@
 local opts = require("FaisalBudiono.util").create_opts
+local get_on_visual = require("FaisalBudiono.util").get_visual
 
 vim.g.mapleader = " "
 
@@ -42,6 +43,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts("Move down and auto indent"))
 
 -- Search Highlighter
 vim.keymap.set("n", "<leader>hl", ":noh<CR>", opts("no highlight"))
+vim.keymap.set("v", "<leader>hl", 'y/<Bslash>v<c-r>"<CR>N', opts("highlight selected word"))
 
 -- Quickfix
 vim.keymap.set("n", "<leader>qo", ":copen<CR>", opts("Open quickfix list"))
