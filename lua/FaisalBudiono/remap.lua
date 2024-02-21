@@ -54,5 +54,11 @@ vim.keymap.set("v", "<leader>pn", function()
     vim.cmd("noh")
 end, opts("Replace slash to backslash"))
 
--- UI 
+-- UI
 vim.keymap.set("n", "<M-z>", ":set wrap!<CR>", opts("Toggle linewrap"))
+vim.keymap.set(
+    "n",
+    "<leader><M-c>",
+    ":set fo-=o<CR>",
+    opts("Overwrite o new line auto comment when cursor on comment section")
+)
