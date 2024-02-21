@@ -11,6 +11,7 @@ return {
             integrations = {
                 -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
                 gitsigns = true,
+                harpoon = true,
                 barbecue = {
                     dim_dirname = true, -- directory name is dimmed by default
                     bold_basename = true,
