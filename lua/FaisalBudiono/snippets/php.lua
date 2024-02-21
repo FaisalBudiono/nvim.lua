@@ -1,5 +1,6 @@
 local ls = require("luasnip")
 local s = ls.snippet
+local i = ls.insert_node
 local f = ls.function_node
 local fmt = require("luasnip.extras.fmt").fmt
 
@@ -32,7 +33,7 @@ class {}
         fmt(
             [[
     try {{
-    }}catch(\Exception $e){{
+    }}catch(\Throwable $e){{
     }}
             ]],
             {}
@@ -44,13 +45,36 @@ class {}
         fmt(
             [[
     try {{
+
         $this->fail('Should throw error');
     }} catch (AssertionFailedError $e) {{
         throw $e;
-    }}catch(\Exception $e){{
+    }}catch(\Throwable $e){{
     }}
             ]],
             {}
+        )
+    ),
+
+    s(
+        "catry",
+        fmt(
+            [[
+    try {{
+        {}
+        return true;
+    }}catch(ExpectationFailedException $e){{
+         dump(
+            $e->toString(),
+            $e->getComparisonFailure(),
+        );
+        return false;
+    }}catch(\Throwable $e){{
+         dump($e);
+        return false;
+    }}
+            ]],
+            {i(0)}
         )
     ),
 }
