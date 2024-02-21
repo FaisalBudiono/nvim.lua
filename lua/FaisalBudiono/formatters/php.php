@@ -9,6 +9,7 @@ return (new Config())
         'array_syntax' => [
             'syntax' => 'short',
         ],
+        'blank_line_before_statement' => true,
         'braces_position' => true,
         'compact_nullable_type_declaration' => true,
         'declare_strict_types' => true,
@@ -31,6 +32,7 @@ return (new Config())
         'single_line_empty_body' => true,
         'single_quote' => true,
         'statement_indentation' => true,
+        'spaces_inside_parentheses' => true,
         'trailing_comma_in_multiline' => [
             'elements' => ['arguments', 'arrays'],
         ],
