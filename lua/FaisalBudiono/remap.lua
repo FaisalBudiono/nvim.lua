@@ -54,3 +54,5 @@ vim.keymap.set("v", "<leader>pn", function()
     vim.cmd("noh")
 end, opts("Replace slash to backslash"))
 
+-- UI 
+vim.keymap.set("n", "<M-z>", ":set wrap!<CR>", opts("Toggle linewrap"))
