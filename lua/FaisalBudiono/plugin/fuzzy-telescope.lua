@@ -89,6 +89,9 @@ return {
 
         tele.setup({
             defaults = {
+                file_ignore_patterns = {
+                    ".git/.*",
+                },
                 mappings = {
                     i = {
                         ["<C-o>"] = 'complete_tag', -- add filtering in telescope symbol
