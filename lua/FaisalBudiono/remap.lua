@@ -43,7 +43,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts("Move down and auto indent"))
 
 -- Search Highlighter
 vim.keymap.set("n", "<leader>hl", ":noh<CR>", opts("no highlight"))
-vim.keymap.set("v", "<leader>hl", 'y/<Bslash>v<c-r>"<CR>N', opts("highlight selected word"))
+vim.keymap.set("v", "<leader>hl", 'y/<Bslash>v<c-r>"<CR>Nzz', opts("highlight selected word"))
 
 -- Quickfix
 vim.keymap.set("n", "<leader>qo", ":copen<CR>", opts("Open quickfix list"))
