@@ -16,7 +16,7 @@ return {
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
         local mason_lspconfig = require("mason-lspconfig")
-        local schema_store = require("schemastore")
+        local util = require("FaisalBudiono.util")
 
         local keymap = vim.keymap -- for conciseness
 
@@ -76,75 +76,21 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
+        local default_config = {
+            capabilities = capabilities,
+            on_attach = on_attach,
+        }
+
         mason_lspconfig.setup_handlers({
-            function(server_name) -- default handler (optional)
-                require("lspconfig")[server_name].setup({
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                })
-            end,
+            function(server_name)
+                local isSuccess, lang_config =
+                    pcall(require, "FaisalBudiono.plugin.lsp.lang." .. server_name)
 
-            lua_ls = function()
-                lspconfig["lua_ls"].setup({
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                    settings = { -- custom settings for lua
-                        Lua = {
-                            -- make the language server recognize "vim" global
-                            diagnostics = {
-                                globals = { "vim" },
-                            },
-                            workspace = {
-                                -- make language server aware of runtime files
-                                library = {
-                                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                                    [vim.fn.stdpath("config") .. "/lua"] = true,
-                                },
-                            },
-                        },
-                    },
-                })
-            end,
-
-            tailwindcss = function()
-                lspconfig["tailwindcss"].setup({
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                    filetypes = {
-                        "markdown",
-                        "css",
-                        "less",
-                        "sass",
-                        "scss",
-                        "javascript",
-                        "javascriptreact",
-                        "rescript",
-                        "typescript",
-                        "typescriptreact",
-                    },
-                })
-            end,
-
-            jsonls = function()
-                lspconfig["jsonls"].setup({
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                    settings = {
-                        json = {
-                            schemas = schema_store.json.schemas({
-                                replace = {
-                                    ["composer.json"] = {
-                                        description = "Custom composer.json",
-                                        fileMatch = { "composer.json" },
-                                        name = "composer.json",
-                                        url = "https://gist.githubusercontent.com/FaisalBudiono/3392f25dda51dc837d607e21d8be1a59/raw/de381b147ae491d82418854027b7635b9ac1b508/composer-schema.json",
-                                    },
-                                },
-                            }),
-                            validate = { enable = true },
-                        },
-                    },
-                })
+                if isSuccess then
+                    lspconfig[server_name].setup(util.table_expand(default_config, lang_config))
+                else
+                    lspconfig[server_name].setup(default_config)
+                end
             end,
         })
     end,
