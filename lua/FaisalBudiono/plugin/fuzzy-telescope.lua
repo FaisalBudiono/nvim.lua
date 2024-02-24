@@ -57,6 +57,17 @@ return {
         },
         {
             "<leader>po",
+            function()
+                require("telescope.builtin").lsp_document_symbols({
+                    symbols = { "method" },
+                })
+            end,
+            noremap = true,
+            silent = true,
+            desc = "Open telescope symbol method only",
+        },
+        {
+            "<leader>pO",
             ":lua require('telescope.builtin').lsp_document_symbols()<cr>",
             noremap = true,
             silent = true,
