@@ -30,4 +30,16 @@ M.relative_path = function()
     return vim.fn.expand("%:.:h")
 end
 
+M.table_expand = function(defaultTable, extendedTable)
+    local tab = {}
+    for key, value in pairs(defaultTable) do
+        tab[key] = value
+    end
+
+    for key, value in pairs(extendedTable) do
+        tab[key] = value
+    end
+    return tab
+end
+
 return M
