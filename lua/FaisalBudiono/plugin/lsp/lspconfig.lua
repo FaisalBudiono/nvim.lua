@@ -6,6 +6,7 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "hrsh7th/cmp-nvim-lsp",
+        "b0o/schemastore.nvim",
     },
     config = function()
         vim.diagnostic.config({
@@ -15,6 +16,7 @@ return {
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
         local mason_lspconfig = require("mason-lspconfig")
+        local schema_store = require("schemastore")
 
         local keymap = vim.keymap -- for conciseness
 
@@ -119,6 +121,28 @@ return {
                         "rescript",
                         "typescript",
                         "typescriptreact",
+                    },
+                })
+            end,
+
+            jsonls = function()
+                lspconfig["jsonls"].setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                    settings = {
+                        json = {
+                            schemas = schema_store.json.schemas({
+                                replace = {
+                                    ["composer.json"] = {
+                                        description = "Custom composer.json",
+                                        fileMatch = { "composer.json" },
+                                        name = "composer.json",
+                                        url = "https://gist.githubusercontent.com/FaisalBudiono/3392f25dda51dc837d607e21d8be1a59/raw/de381b147ae491d82418854027b7635b9ac1b508/composer-schema.json",
+                                    },
+                                },
+                            }),
+                            validate = { enable = true },
+                        },
                     },
                 })
             end,
