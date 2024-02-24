@@ -89,14 +89,18 @@ return {
 
         tele.setup({
             defaults = {
+                layout_strategy = "vertical",
                 file_ignore_patterns = {
                     ".git/.*",
                 },
                 mappings = {
                     i = {
-                        ["<C-o>"] = 'complete_tag', -- add filtering in telescope symbol
+                        ["<C-o>"] = "complete_tag", -- add filtering in telescope symbol
                     },
                 },
+            },
+            pickers = {
+                lsp_document_symbols = { symbol_width = 80 },
             },
         })
 
