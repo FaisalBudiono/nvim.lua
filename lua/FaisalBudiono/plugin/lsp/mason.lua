@@ -32,6 +32,7 @@ return {
         mason_tool_installer.setup({
             ensure_installed = {
                 "json-lsp",
+                "yaml-language-server",
                 "intelephense",
                 "lua-language-server",
                 "typescript-language-server",
