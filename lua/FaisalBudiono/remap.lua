@@ -14,6 +14,7 @@ vim.keymap.set({ "n", "v" }, "<leader>`", [["_]], opts("Ignore copy"))
 vim.keymap.set({ "n", "v" }, "<leader>cy", [["+y]], opts("Prepare copy to clipboard"))
 vim.keymap.set("n", "<leader>cp", [["+p]], opts("Paste from clipboard (after)"))
 vim.keymap.set("n", "<leader>cP", [["+P]], opts("Paste from clipboard (before)"))
+vim.keymap.set({ "v" }, "p", [["_dP]], opts("Paste without overwriting register"))
 
 vim.keymap.set("n", "<leader>nn", function()
     vim.cmd(":tabnew")
