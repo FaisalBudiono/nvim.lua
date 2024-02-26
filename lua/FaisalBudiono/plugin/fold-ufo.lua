@@ -1,3 +1,7 @@
+local ftMap = {
+    php = { "indent" },
+}
+
 return {
     "kevinhwang91/nvim-ufo",
     lazy = true,
@@ -7,7 +11,7 @@ return {
     },
     config = function()
         local opts = require("FaisalBudiono.util").create_opts
-        local ufo =  require("ufo")
+        local ufo = require("ufo")
 
         vim.o.foldcolumn = "1" -- '0' is not bad
         vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
@@ -47,8 +51,14 @@ return {
         end
 
         ufo.setup({
-            provider_selector = function()
-                return { "lsp", "indent" }
+            provider_selector = function(_, filetype)
+                local selector = ftMap[filetype]
+
+                if selector == nil then
+                    selector = { "lsp", "indent" }
+                end
+
+                return selector
             end,
             fold_virt_text_handler = handler,
         })
