@@ -49,9 +49,6 @@ return {
             keymap.set("n", "<leader>lrn", vim.lsp.buf.rename, opts("Rename variable"))
 
             keymap.set("n", "<leader>l.", vim.lsp.buf.code_action, opts("LSP code action"))
-
-            keymap.set("n", "[d", vim.diagnostic.goto_prev, opts("Go to previous diagnostic"))
-            keymap.set("n", "]d", vim.diagnostic.goto_next, opts("Go to next diagnostic"))
         end
 
         -- used to enable autocompletion (assign to every lsp server config)
