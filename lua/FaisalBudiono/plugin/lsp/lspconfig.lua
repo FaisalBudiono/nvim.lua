@@ -27,8 +27,11 @@ return {
 
             -- set keybinds
             keymap.set("n", "gd", vim.lsp.buf.definition, opts("LSP go to definition"))
+            keymap.set("n", "gD", vim.lsp.buf.declaration, opts("LSP go to declaration"))
 
             keymap.set("n", "gr", vim.lsp.buf.references, opts("Show LSP references"))
+
+            keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, opts("Show LSP type references"))
 
             keymap.set("n", "<leader>ldh", vim.diagnostic.open_float, opts("Show line diagnostic"))
 
