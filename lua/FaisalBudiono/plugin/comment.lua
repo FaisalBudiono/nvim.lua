@@ -1,5 +1,14 @@
 return {
     "numToStr/Comment.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    config = true, -- run require("Comment").setup()
+    config = function()
+        local comment = require("Comment")
+
+        comment.setup()
+
+        local ft = require("Comment.ft")
+        local filetypes = require("FaisalBudiono.filetype").filetypes
+
+        ft({filetypes["eraser-diagram"]}, "//%s")
+    end,
 }
