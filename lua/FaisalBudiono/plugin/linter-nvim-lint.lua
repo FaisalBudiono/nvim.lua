@@ -7,7 +7,6 @@ local config_fts = {
     css = { "eslint_d" },
     html = { "eslint_d" },
     yaml = { "eslint_d" },
-    markdown = { "eslint_d" },
     graphql = { "eslint_d" },
     lua = { "selene" },
     php = { "php" },
