@@ -6,7 +6,6 @@ local config_fts = {
     svelte = { "eslint_d" },
     css = { "eslint_d" },
     html = { "eslint_d" },
-    yaml = { "eslint_d" },
     graphql = { "eslint_d" },
     lua = { "selene" },
     php = { "php" },
