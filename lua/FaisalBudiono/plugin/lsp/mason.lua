@@ -31,6 +31,9 @@ return {
 
         mason_tool_installer.setup({
             ensure_installed = {
+                "gopls",
+                "gofumpt",
+                "goimports",
                 "json-lsp",
                 "yaml-language-server",
                 "intelephense",
@@ -46,6 +49,7 @@ return {
                 "dockerfile-language-server",
                 "bash-language-server",
                 "shfmt",
+                "sqls",
             },
         })
 

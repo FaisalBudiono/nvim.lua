@@ -13,6 +13,8 @@ local config_fts = {
     lua = { "stylua" },
     php = { "php" },
     sh = { "shfmt" },
+    sql = { "sql-formatter" },
+    go = { "gofumpt", "goimports" },
 }
 
 local fts = {}
