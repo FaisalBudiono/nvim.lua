@@ -105,6 +105,7 @@ return {
                     ".git/.*",
                     "vendor/.*",
                     "node_modules/.*",
+                    "tmp/.*"
                 },
                 mappings = {
                     i = {
