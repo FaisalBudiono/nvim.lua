@@ -1,4 +1,8 @@
+local custom_fts = require("FaisalBudiono.filetype").filetypes
+
 local ftMap = {
+    [custom_fts["yaml.docker-compose"]] = { "treesitter", "indent" },
+    yaml = { "treesitter", "indent" },
     markdown = { "treesitter", "indent" },
 }
 
