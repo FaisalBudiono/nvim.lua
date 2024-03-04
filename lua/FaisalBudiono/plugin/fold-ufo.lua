@@ -1,9 +1,4 @@
-local custom_ft = require("FaisalBudiono.filetype").filetypes
-
 local ftMap = {
-    php = { "indent" },
-    [custom_ft["yaml.docker-compose"]] = { "indent" },
-    yaml = { "indent" },
 }
 
 return {
