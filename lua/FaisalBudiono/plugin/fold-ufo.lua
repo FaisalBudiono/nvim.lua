@@ -1,4 +1,5 @@
 local ftMap = {
+    markdown = { "treesitter", "indent" },
 }
 
 return {
