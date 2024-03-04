@@ -1,6 +1,5 @@
 return {
     filetypes = {
-        "markdown",
         "css",
         "less",
         "sass",
