@@ -13,8 +13,8 @@ local config_fts = {
     lua = { "stylua" },
     php = { "php" },
     sh = { "shfmt" },
-    sql = { "sql-formatter" },
     go = { "gofumpt", "goimports" },
+    sql = { "sql" },
 }
 
 local fts = {}
@@ -33,6 +33,8 @@ return {
         local conform = require("conform")
 
         local file_config_php = vim.fn.stdpath("config") .. "/lua/FaisalBudiono/formatters/php.php"
+        local file_config_sql = vim.fn.stdpath("config")
+            .. "/lua/FaisalBudiono/formatters/sql-formatter.json"
 
         local format_config = {
             lsp_fallback = true,
@@ -55,6 +57,19 @@ return {
                         }
                     end,
                     stdin = false,
+                },
+                sql = {
+                    command = "sql-formatter",
+                    args = function(self, ctx)
+                        vim.print("terpanggil")
+                        vim.print(file_config_sql)
+                        return {
+                            "--config=" .. file_config_sql,
+                            "-l=mysql",
+                            ctx.filename,
+                        }
+                    end,
+                    stdin = true,
                 },
             },
         })
