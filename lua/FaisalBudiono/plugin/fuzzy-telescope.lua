@@ -56,7 +56,7 @@ return {
             desc = "Open telescope fuzzy finder for all file",
         },
         {
-            "<leader>po",
+            "<leader>pO",
             function()
                 require("telescope.builtin").lsp_document_symbols({
                     symbols = { "method" },
@@ -67,7 +67,7 @@ return {
             desc = "Open telescope symbol method only",
         },
         {
-            "<leader>pO",
+            "<leader>po",
             ":lua require('telescope.builtin').lsp_document_symbols()<cr>",
             noremap = true,
             silent = true,
