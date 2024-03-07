@@ -61,12 +61,9 @@ return {
                 sql = {
                     command = "sql-formatter",
                     args = function(self, ctx)
-                        vim.print("terpanggil")
-                        vim.print(file_config_sql)
                         return {
                             "--config=" .. file_config_sql,
                             "-l=mysql",
-                            ctx.filename,
                         }
                     end,
                     stdin = true,
