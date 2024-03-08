@@ -1,0 +1,61 @@
+local util = require("FaisalBudiono.util")
+
+local pane = "zzdocker.1"
+
+local cmd_clear = function()
+    vim.cmd("!tmux send-keys -t " .. pane .. " c-c")
+    vim.cmd("!tmux send-keys -t " .. pane .. " 'clear' c-m")
+    vim.cmd("!tmux clear-history -t " .. pane)
+end
+
+vim.keymap.set("n", "<leader>l;", function()
+    local filepath = vim.fn.expand("%:~:.")
+
+    cmd_clear()
+
+    -- vim.cmd("!tmux send-keys -t " .. pane .. " './vendor/bin/paratest -f " .. filepath .. "' c-m")
+    vim.cmd("!tmux send-keys -t " .. pane .. " './vendor/bin/paratest " .. filepath .. "' c-m")
+end)
+
+vim.keymap.set("n", "<leader>l:", function()
+    local filepath = vim.fn.expand("%:~:.")
+
+    cmd_clear()
+
+    vim.cmd(
+        "!tmux send-keys -t " .. pane .. " './vendor/bin/phpunit --testdox " .. filepath .. "' c-m"
+    )
+end)
+
+vim.keymap.set("n", "<leader>lt", function()
+    local filepath = vim.fn.expand("%:.")
+    local filename = vim.fn.expand("%:t")
+
+    local paths = {}
+    local _ = string.gsub(filepath, "(%w+)%/", function(sec)
+        table.insert(paths, sec)
+    end)
+
+    local testdir = "tests/Unit"
+
+    for i, path in ipairs(paths) do
+        if i ~= 1 then
+            testdir = testdir .. "/" .. path
+        end
+    end
+    local testpath = testdir .. "/" .. filename
+
+    vim.cmd(":!mkdir -p " .. testdir)
+    vim.cmd(":e " .. testpath)
+    vim.cmd(":w")
+end)
+
+vim.keymap.set("v", "<leader>l;", function()
+    local name = util.get_visual()[1]
+
+    cmd_clear()
+
+    vim.cmd("!tmux send-keys -t " .. pane .. " 'pwf " .. name .. "' c-m")
+end)
+
+return {}
