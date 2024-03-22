@@ -103,6 +103,8 @@ return {
                 layout_strategy = "vertical",
                 file_ignore_patterns = {
                     ".git/.*",
+                    ".next/.*",
+                    ".yarn/.*",
                     "vendor/.*",
                     "node_modules/.*",
                     "tmp/.*"
