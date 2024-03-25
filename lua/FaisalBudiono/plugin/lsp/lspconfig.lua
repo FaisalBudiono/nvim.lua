@@ -32,6 +32,7 @@ return {
             keymap.set("n", "gr", vim.lsp.buf.references, opts("Show LSP references"))
 
             keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, opts("Show LSP type references"))
+            keymap.set("n", "<space>gi", vim.lsp.buf.implementation, opts("Show LSP implementation"))
 
             keymap.set("n", "<leader>ldh", vim.diagnostic.open_float, opts("Show line diagnostic"))
 
