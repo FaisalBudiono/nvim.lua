@@ -49,8 +49,8 @@ vim.keymap.set("v", "<leader>hl", 'y/<Bslash>v<c-r>"<CR>Nzz', opts("highlight se
 -- Quickfix
 vim.keymap.set("n", "<leader>qo", ":copen<CR>", opts("Open quickfix list"))
 vim.keymap.set("n", "<leader>qq", ":cclose<CR>", opts("Quite quickfix list"))
-vim.keymap.set("n", "<leader>qn", ":cnext<CR>", opts("Next quickfix"))
-vim.keymap.set("n", "<leader>qp", ":cprev<CR>", opts("Prev quickfix"))
+vim.keymap.set("n", "]q", ":cnext<CR>", opts("Next quickfix"))
+vim.keymap.set("n", "[q", ":cprev<CR>", opts("Prev quickfix"))
 
 -- Replace / to \
 vim.keymap.set("v", "<leader>pn", function()
@@ -61,8 +61,8 @@ end, opts("Replace slash to backslash"))
 -- Buffer
 vim.keymap.set("n", "<leader>bQ", ":bufdo bd<CR>",opts("Close all buffers"))
 vim.keymap.set("n", "<leader>bq", ":bd<CR>",opts("Close buffer"))
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>",opts("Next buffer"))
-vim.keymap.set("n", "<leader>bp", ":bprev<CR>",opts("Prev buffer"))
+vim.keymap.set("n", "]b", ":bnext<CR>",opts("Next buffer"))
+vim.keymap.set("n", "[b", ":bprev<CR>",opts("Prev buffer"))
 
 -- UI
 vim.keymap.set("n", "<M-z>", ":set wrap!<CR>", opts("Toggle linewrap"))
