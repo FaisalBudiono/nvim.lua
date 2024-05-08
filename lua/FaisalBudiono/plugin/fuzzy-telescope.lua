@@ -56,6 +56,13 @@ return {
             desc = "Open telescope fuzzy finder for all file",
         },
         {
+            "<leader>pb",
+            ":lua require('telescope.builtin').buffers()<cr>",
+            noremap = true,
+            silent = true,
+            desc = "Open telescope fuzzy finder for buffers",
+        },
+        {
             "<leader>pO",
             function()
                 require("telescope.builtin").lsp_document_symbols({
