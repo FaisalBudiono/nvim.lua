@@ -19,10 +19,22 @@ return {
             silent = true,
             desc = "Open Neogit",
         },
+        {
+            "<leader>ggN",
+            function()
+                vim.cmd("Neogit")
+            end,
+            noremap = true,
+            silent = true,
+            desc = "Open Neogit in new tab",
+        },
     },
     opts = {
         disable_line_numbers = false,
         disable_insert_on_commit = true,
+        commit_editor = {
+            kind = "split",
+        },
     },
     config = true,
 }
