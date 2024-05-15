@@ -56,6 +56,7 @@ return {
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
                 { name = "nvim_lsp_signature_help" },
+                { name = "vim-dadbod-completion" },
             }, {
                 { name = "buffer" },
             }),
@@ -79,6 +80,7 @@ return {
                 { name = "buffer" },
             }),
         })
+
 
         -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
         cmp.setup.cmdline({ "/", "?" }, {

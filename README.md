@@ -6,3 +6,4 @@
 - ripgrep
 - fzf
 - nerdfont
+- mysql-client
