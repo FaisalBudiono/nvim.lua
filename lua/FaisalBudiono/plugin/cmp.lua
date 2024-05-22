@@ -49,7 +49,14 @@ return {
                 ["<C-u>"] = cmp.mapping.scroll_docs(-2),
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<C-e>"] = cmp.mapping.abort(),
-                ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+                ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+                ["<Tab>"] = cmp.mapping(function(fallback)
+                    if ls.locally_jumpable(1) then
+                        ls.jump(1)
+                    else
+                        fallback()
+                    end
+                end),
                 ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }),
             sources = cmp.config.sources({
@@ -80,7 +87,6 @@ return {
                 { name = "buffer" },
             }),
         })
-
 
         -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
         cmp.setup.cmdline({ "/", "?" }, {
