@@ -36,4 +36,22 @@ const [{}, set{}] = useState()
             }
         )
     ),
+
+    s(
+        "ctime",
+        fmt(
+            [[
+console.time('{}')
+console.timeEnd('{}')
+            ]],
+            {
+                i(1, "timerName"),
+                f(function(val)
+                    local timerName = val[1][1]
+
+                    return timerName
+                end, { 1 }),
+            }
+        )
+    ),
 }
