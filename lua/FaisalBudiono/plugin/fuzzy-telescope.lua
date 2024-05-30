@@ -114,11 +114,12 @@ return {
                     ".yarn/.*",
                     "vendor/.*",
                     "node_modules/.*",
-                    "tmp/.*"
+                    "tmp/.*",
                 },
                 mappings = {
                     i = {
                         ["<C-o>"] = "complete_tag", -- add filtering in telescope symbol
+                        ["<A-Q>"] = "send_to_qflist", -- Send all telescope to qf
                     },
                 },
             },
