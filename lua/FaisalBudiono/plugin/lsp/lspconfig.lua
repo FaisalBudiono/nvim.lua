@@ -49,18 +49,6 @@ return {
             vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts("Go to next diagnostic"))
             vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts("Go to previous diagnostic"))
 
-            keymap.set(
-                "n",
-                "<leader>ldd",
-                ":TroubleToggle document_diagnostics<CR>",
-                opts("Show Trouble document diagnostic")
-            )
-            keymap.set(
-                "n",
-                "<leader>ldw",
-                ":TroubleToggle workspace_diagnostics<CR>",
-                opts("Show Trouble workspace diagnostic")
-            )
             keymap.set("n", "K", vim.lsp.buf.hover, opts("Show LSP hover doc"))
 
             keymap.set("n", "<leader>lrn", vim.lsp.buf.rename, opts("Rename variable"))
