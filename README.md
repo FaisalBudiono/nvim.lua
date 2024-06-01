@@ -7,3 +7,4 @@
 - fzf
 - nerdfont
 - mysql-client
+- postgresql-client
