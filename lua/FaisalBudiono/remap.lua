@@ -72,3 +72,6 @@ vim.keymap.set(
     ":set fo-=o<CR>",
     opts("Overwrite o new line auto comment when cursor on comment section")
 )
+
+-- Sort
+vim.keymap.set({ "v" }, "<leader>cs", ":! sort -fb<CR>", opts("Sort visual block"))
