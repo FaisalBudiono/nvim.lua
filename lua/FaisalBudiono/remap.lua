@@ -59,10 +59,10 @@ vim.keymap.set("v", "<leader>pn", function()
 end, opts("Replace slash to backslash"))
 
 -- Buffer
-vim.keymap.set("n", "<leader>bQ", ":bufdo bd<CR>",opts("Close all buffers"))
-vim.keymap.set("n", "<leader>bq", ":bd<CR>",opts("Close buffer"))
-vim.keymap.set("n", "]b", ":bnext<CR>",opts("Next buffer"))
-vim.keymap.set("n", "[b", ":bprev<CR>",opts("Prev buffer"))
+vim.keymap.set("n", "<leader>bQ", ":bufdo bd<CR>", opts("Close all buffers"))
+vim.keymap.set("n", "<leader>bq", ":bd<CR>", opts("Close buffer"))
+vim.keymap.set("n", "]b", ":bnext<CR>", opts("Next buffer"))
+vim.keymap.set("n", "[b", ":bprev<CR>", opts("Prev buffer"))
 
 -- UI
 vim.keymap.set("n", "<M-z>", ":set wrap!<CR>", opts("Toggle linewrap"))
