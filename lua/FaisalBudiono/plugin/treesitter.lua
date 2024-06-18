@@ -5,22 +5,25 @@ return {
     config = function()
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
+                "c",
+                "gitcommit",
+                "gitignore",
                 "go",
                 "gomod",
                 "gosum",
-                "c",
-                "lua",
-                "vim",
-                "vimdoc",
-                "query",
-                "php",
-                "phpdoc",
                 "javascript",
                 "jsdoc",
-                "typescript",
                 "json",
+                "lua",
                 "markdown",
                 "markdown_inline",
+                "php",
+                "phpdoc",
+                "query",
+                "tsx",
+                "typescript",
+                "vim",
+                "vimdoc",
             },
 
             -- Automatically install missing parsers when entering buffer
