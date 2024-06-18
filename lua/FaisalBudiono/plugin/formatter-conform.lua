@@ -37,7 +37,7 @@ return {
             .. "/lua/FaisalBudiono/formatters/sql-formatter.json"
 
         local format_config = {
-            lsp_fallback = true,
+            lsp_format = "fallback",
             async = false,
             timeout_ms = 2500,
         }
