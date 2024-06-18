@@ -15,6 +15,7 @@ local config_fts = {
     sh = { "shfmt" },
     go = { "gofumpt", "goimports" },
     sql = { "sql" },
+    mysql = { "sql" },
 }
 
 local fts = {}
