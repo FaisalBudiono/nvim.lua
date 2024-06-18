@@ -41,6 +41,7 @@ return {
                 "typescript-language-server",
                 "tailwindcss-language-server",
                 "php-cs-fixer",
+                "prettierd",
                 "prettier",
                 "stylua",
                 "eslint_d",
