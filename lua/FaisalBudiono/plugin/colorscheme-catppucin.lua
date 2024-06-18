@@ -18,6 +18,8 @@ return {
                     dim_context = true,
                     alt_background = true,
                 },
+                neogit = true,
+                treesitter = true,
             },
         })
 
