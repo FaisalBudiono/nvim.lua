@@ -79,14 +79,18 @@ class {}
     ),
 
     s(
-        "cctag",
+        "ctestcase",
         fmt(
             [[
 /** 
  * @test 
  */
+public function {}(): void 
+{{
+    //
+}}
             ]],
-            {}
+            {i(0)}
         )
     ),
 }
