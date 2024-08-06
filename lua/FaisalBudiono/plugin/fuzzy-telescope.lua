@@ -22,7 +22,13 @@ return {
         {
             "<leader>ps",
             function()
-                require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })
+                require("telescope.builtin").grep_string({
+                    search = vim.fn.input("Grep > "),
+                    additional_args = {
+                        "-u",
+                        "--hidden",
+                    },
+                })
             end,
             mode = { "n" },
             noremap = true,
@@ -34,6 +40,10 @@ return {
             function()
                 require("telescope.builtin").grep_string({
                     search = require("FaisalBudiono.util").get_visual()[1],
+                    additional_args = {
+                        "-u",
+                        "--hidden",
+                    },
                 })
             end,
             mode = { "v" },
@@ -43,7 +53,14 @@ return {
         },
         {
             "<leader>pS",
-            ":lua require('telescope.builtin').live_grep()<cr>",
+            function()
+                require("telescope.builtin").live_grep({
+                    additional_args = {
+                        "-u",
+                        "--hidden",
+                    },
+                })
+            end,
             noremap = true,
             silent = true,
             desc = "open telescope live grep",
