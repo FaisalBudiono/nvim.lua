@@ -14,6 +14,7 @@ local config_fts = {
     php = { "php" },
     sh = { "shfmt" },
     go = { "gofumpt", "goimports" },
+    templ = { "templ" },
     sql = { "sql" },
     mysql = { "sql" },
 }

@@ -1,12 +1,15 @@
 return {
     filetypes = {
         "css",
-        "less",
-        "sass",
-        "scss",
+        "html",
         "javascript",
         "javascriptreact",
+        "less",
+        "markdown",
         "rescript",
+        "sass",
+        "scss",
+        "templ",
         "typescript",
         "typescriptreact",
     },
