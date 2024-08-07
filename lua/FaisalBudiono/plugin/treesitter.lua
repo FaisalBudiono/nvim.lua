@@ -43,9 +43,9 @@ return {
                 enable = true,
                 keymaps = {
                     init_selection = "<leader>vsi", -- set to `false` to disable one of the mappings
-                    node_incremental = "<leader>vsn",
+                    node_incremental = "]s",
                     scope_incremental = "<leader>vss",
-                    node_decremental = "<leader>vsp",
+                    node_decremental = "[s",
                 },
             },
         })
