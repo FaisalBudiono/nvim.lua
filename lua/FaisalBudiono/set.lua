@@ -26,7 +26,7 @@ vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 -- Line limit before scrolling
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 4
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
