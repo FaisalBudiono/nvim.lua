@@ -21,4 +21,31 @@ return {
             }
         )
     ),
+
+    s(
+        "cbug",
+        fmt(
+            [[
+    fmt.Printf("Kambing {} %#v\n",{})
+            ]],
+            {
+                i(1, "Whatttt"),
+                i(2),
+            }
+        )
+    ),
+
+    s(
+        "cgof",
+        fmt(
+            [[
+    go func() {{
+        {}
+    }}()
+            ]],
+            {
+                i(1),
+            }
+        )
+    ),
 }
