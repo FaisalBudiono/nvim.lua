@@ -9,6 +9,7 @@ return {
         "rescript",
         "sass",
         "scss",
+        "svelte",
         "templ",
         "typescript",
         "typescriptreact",
