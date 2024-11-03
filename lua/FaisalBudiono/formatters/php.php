@@ -43,4 +43,5 @@ return (new Config())
             'ensure_single_space' => true,
         ],
         '@PSR12' => true,
+        '@PER-CS2.0' => true,
     ]);
