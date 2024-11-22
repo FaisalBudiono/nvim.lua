@@ -20,6 +20,22 @@ return {
             desc = "Open telescope fuzzy finder for git files",
         },
         {
+            "<leader>pt",
+            function()
+                require("telescope.builtin").grep_string({
+                    search = "@todo",
+                    additional_args = {
+                        "-u",
+                        "--hidden",
+                    },
+                })
+            end,
+            mode = { "n" },
+            noremap = true,
+            silent = true,
+            desc = "Open telescope grep string",
+        },
+        {
             "<leader>ps",
             function()
                 require("telescope.builtin").grep_string({
