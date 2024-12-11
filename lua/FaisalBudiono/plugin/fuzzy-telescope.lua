@@ -38,8 +38,7 @@ return {
         {
             "<leader>ps",
             function()
-                require("telescope.builtin").grep_string({
-                    search = vim.fn.input("Grep > "),
+                require("telescope.builtin").live_grep({
                     additional_args = {
                         "-u",
                         "--hidden",
@@ -49,7 +48,7 @@ return {
             mode = { "n" },
             noremap = true,
             silent = true,
-            desc = "Open telescope grep string",
+            desc = "Open telescope Live Grep",
         },
         {
             "<leader>ps",
@@ -70,16 +69,11 @@ return {
         {
             "<leader>pS",
             function()
-                require("telescope.builtin").live_grep({
-                    additional_args = {
-                        "-u",
-                        "--hidden",
-                    },
-                })
+                require("FaisalBudiono.plugin.telescope.multigrep").live_multigreps()
             end,
             noremap = true,
             silent = true,
-            desc = "open telescope live grep",
+            desc = "open telescope custom multigrep with glob",
         },
         {
             "<leader>pf",
