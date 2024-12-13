@@ -33,7 +33,7 @@ return {
             mode = { "n" },
             noremap = true,
             silent = true,
-            desc = "Open telescope grep string",
+            desc = "Open telescope TODO list",
         },
         {
             "<leader>ps",
