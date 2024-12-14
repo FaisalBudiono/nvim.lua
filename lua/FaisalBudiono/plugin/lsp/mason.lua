@@ -48,6 +48,7 @@ return {
                 "php-cs-fixer",
                 "prettier",
                 "prettierd",
+                "rust-analyzer",
                 "selene",
                 "shfmt",
                 "sql-formatter",

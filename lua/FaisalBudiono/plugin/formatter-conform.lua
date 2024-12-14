@@ -17,6 +17,7 @@ local config_fts = {
     templ = { "templ" },
     sql = { "sql" },
     mysql = { "sql" },
+    rust = { "rustfmt" },
 }
 
 local fts = {}

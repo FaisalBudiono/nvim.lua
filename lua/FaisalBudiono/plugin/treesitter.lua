@@ -20,6 +20,7 @@ return {
                 "php",
                 "phpdoc",
                 "query",
+                "rust",
                 "tsx",
                 "typescript",
                 "vim",
