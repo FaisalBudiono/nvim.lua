@@ -8,3 +8,4 @@
 - nerdfont
 - mysql-client
 - postgresql-client
+- rustfmt (install this using `rustup`)
