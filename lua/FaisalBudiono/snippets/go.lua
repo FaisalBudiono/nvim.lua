@@ -26,10 +26,10 @@ return {
         "cbug",
         fmt(
             [[
-    fmt.Printf("Kambing {} %#v\n\n",{})
+    fmt.Printf("Kambing \n{}\n\n",{})
             ]],
             {
-                i(1, "Whatttt"),
+                i(1, "%#v"),
                 i(2),
             }
         )
