@@ -14,7 +14,10 @@ return {
                     lualine_a = { "mode" },
                     lualine_b = { "branch", "diff", "diagnostics" },
                     lualine_c = { "buffers" },
-                    lualine_x = { "filetype" },
+                    lualine_x = {
+                        "filetype",
+                        { "searchcount", maxcount = 99999, timeout = 500 },
+                    },
 
                     lualine_y = {
                         -- LSP Bar
