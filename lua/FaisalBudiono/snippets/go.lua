@@ -6,7 +6,7 @@ local fmt = require("luasnip.extras.fmt").fmt
 
 return {
     s(
-        "ernil",
+        "cernil",
         fmt(
             [[
     if {} != nil {{
