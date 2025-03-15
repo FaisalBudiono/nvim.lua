@@ -59,9 +59,10 @@ return {
                 end),
                 ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }),
+
             sources = cmp.config.sources({
-                { name = "nvim_lsp" },
                 { name = "luasnip" },
+                { name = "nvim_lsp" },
                 { name = "nvim_lsp_signature_help" },
                 { name = "vim-dadbod-completion" },
             }, {
@@ -79,9 +80,9 @@ return {
         })
         cmp.setup.filetype("lua", {
             sources = cmp.config.sources({
+                { name = "luasnip" },
                 { name = "nvim_lua" },
                 { name = "nvim_lsp" },
-                { name = "luasnip" },
                 { name = "nvim_lsp_signature_help" },
             }, {
                 { name = "buffer" },
