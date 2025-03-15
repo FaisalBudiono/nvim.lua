@@ -7,6 +7,7 @@ return {
         "petertriho/cmp-git",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-nvim-lua",
+        "hrsh7th/cmp-path",
         "L3MON4D3/LuaSnip",
         "onsails/lspkind.nvim",
 
@@ -65,6 +66,7 @@ return {
                 { name = "nvim_lsp" },
                 { name = "nvim_lsp_signature_help" },
                 { name = "vim-dadbod-completion" },
+                { name = "path" },
             }, {
                 { name = "buffer" },
             }),
@@ -93,6 +95,7 @@ return {
         cmp.setup.cmdline({ "/", "?" }, {
             mapping = cmp.mapping.preset.cmdline(),
             sources = {
+                { name = "path" },
                 { name = "buffer" },
             },
         })
