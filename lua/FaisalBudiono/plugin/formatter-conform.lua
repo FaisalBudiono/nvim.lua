@@ -25,6 +25,9 @@ for ft in pairs(config_fts) do
     table.insert(fts, ft)
 end
 
+-- @todo make toggleable setting for PHP
+local is_old_php_config = true
+
 return {
     "stevearc/conform.nvim",
     ft = fts,

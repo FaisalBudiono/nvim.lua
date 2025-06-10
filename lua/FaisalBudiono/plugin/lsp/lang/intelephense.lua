@@ -53,6 +53,10 @@ return {
                 "redis",
                 "Zend OPcache",
             },
+            -- @todo make toggleable setting for PHP
+            environment = {
+                phpVersion = "7.4",
+            },
         },
     },
 }

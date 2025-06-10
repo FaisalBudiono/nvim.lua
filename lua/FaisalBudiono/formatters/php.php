@@ -33,9 +33,6 @@ return (new Config())
         'single_quote' => true,
         'statement_indentation' => true,
         'spaces_inside_parentheses' => true,
-        'trailing_comma_in_multiline' => [
-            'elements' => ['arguments', 'arrays'],
-        ],
         'trim_array_spaces' => true,
         'types_spaces' => true,
         'type_declaration_spaces' => true,
@@ -44,4 +41,8 @@ return (new Config())
         ],
         '@PSR12' => true,
         '@PER-CS2.0' => true,
+        'trailing_comma_in_multiline' => [
+            'elements' => ['arguments', 'arrays'],
+            // 'elements' => ['arguments', 'array_destructuring', 'arrays', 'match', 'parameters'], // PHP 8.0++
+        ],
     ]);
