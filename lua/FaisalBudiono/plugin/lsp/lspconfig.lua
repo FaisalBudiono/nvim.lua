@@ -46,8 +46,13 @@ return {
 
             keymap.set("n", "<leader>ldh", vim.diagnostic.open_float, opts("Show line diagnostic"))
 
-            vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts("Go to next diagnostic"))
-            vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts("Go to previous diagnostic"))
+            vim.keymap.set("n", "]d", function()
+                vim.diagnostic.jump({ count = 1 })
+            end, opts("Go to next diagnostic"))
+
+            vim.keymap.set("n", "[d", function()
+                vim.diagnostic.jump({ count = -1 })
+            end, opts("Go to previous diagnostic"))
 
             keymap.set("n", "K", vim.lsp.buf.hover, opts("Show LSP hover doc"))
 
