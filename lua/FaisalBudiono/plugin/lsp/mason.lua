@@ -27,7 +27,7 @@ return {
             },
         })
 
-        mason_lspconfig.setup()
+        mason_lspconfig.setup({ automatic_enable = false })
 
         mason_tool_installer.setup({
             ensure_installed = {

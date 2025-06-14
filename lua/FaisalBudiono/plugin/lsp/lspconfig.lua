@@ -76,17 +76,19 @@ return {
             on_attach = on_attach,
         }
 
-        mason_lspconfig.setup_handlers({
-            function(server_name)
-                local isSuccess, lang_config =
-                    pcall(require, "FaisalBudiono.plugin.lsp.lang." .. server_name)
+        local servers = mason_lspconfig.get_installed_servers()
 
-                if isSuccess then
-                    lspconfig[server_name].setup(util.table_expand(default_config, lang_config))
-                else
-                    lspconfig[server_name].setup(default_config)
-                end
-            end,
-        })
+        for _, server_name in ipairs(servers) do
+            local isSuccess, lang_config =
+                pcall(require, "FaisalBudiono.plugin.lsp.lang." .. server_name)
+
+            if isSuccess then
+                local custom_config = util.table_expand(default_config, lang_config)
+
+                lspconfig[server_name].setup(custom_config)
+            else
+                lspconfig[server_name].setup(default_config)
+            end
+        end
     end,
 }
