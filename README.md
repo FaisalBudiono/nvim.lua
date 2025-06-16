@@ -1,3 +1,6 @@
+# Deprecated
+Move to https://github.com/FaisalBudiono/dotfiles
+
 # Dependencies
 ## Linux Deps
 - git
